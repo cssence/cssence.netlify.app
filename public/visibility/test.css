@@ -1,0 +1,6 @@
+li:nth-child(7) span {
+	visibility: hidden;
+}
+li:nth-child(8) span {
+	display: none;
+}

@@ -1,0 +1,83 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+* {
+	margin: 0;
+	font-size: inherit;
+	font-style: inherit;
+}
+:root {
+	--line-height: 1.75;
+	--line-size: calc(var(--line-height) * 1rem);
+	color-scheme: light dark;
+}
+*:focus {
+	outline: 1px dashed;
+}
+a:hover {
+	text-decoration-style: double;
+}
+html {
+	font: 16px/var(--line-height) monospace;
+}
+body {
+	max-inline-size: 60ch;
+	margin-inline: auto;
+	padding-block: var(--line-size);
+	padding-inline: 1ch;
+}
+body:has(h1:first-child)::before,
+a:has(+ h1),
+li::before {
+	display: inline-block;
+	inline-size: 4ch;
+	margin-inline: -1ch 2ch;
+	text-align: end;
+}
+body:has(h1:first-child)::before {
+	content: '';
+}
+body:has(h1:first-child)::before,
+a:has(+ h1) {
+	float: inline-start;
+	block-size: var(--line-size);
+	margin-inline: 0 1ch;
+	padding-inline-start: 4ch;
+	background: url(https://cssence.github.io/assets/logo.svg) .25ch/contain no-repeat;
+	overflow: hidden;
+}
+a:has(+ h1):focus,
+a:has(+ h1):hover {
+	padding-inline-start: 0;
+	background-image: none;
+}
+i[aria-hidden] {
+	font-weight: 400;
+}
+h1,
+p,
+ol {
+	margin-block-end: var(--line-size);
+}
+ol {
+	counter-reset: line;
+	list-style: none;
+	padding-inline-start: 0;
+}
+ol li {
+	counter-increment: line;
+}
+ol li::before {
+	content: counter(line) '.';
+}
+li,
+p:first-of-type {
+	margin-inline: -1ch;
+	padding-inline: 1ch;
+}
+p:first-of-type,
+li:nth-child(odd) {
+	background-color: #80808025;
+}

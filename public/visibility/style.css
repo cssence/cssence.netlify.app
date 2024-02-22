@@ -1,0 +1,8 @@
+li {
+	display: grid;
+	grid-template-columns: 5ch 24ch 22ch 5ch;
+	inline-size: 58ch;
+}
+span {
+	grid-column: 4;
+}
