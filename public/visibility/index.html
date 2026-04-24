@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Visibility — @CSSence test pages</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/icon.png" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style>
+html{font:100%/1.5 sans-serif}
+ol{max-inline-size:58ch}
+li{padding-block:.375rem}
+li+li{border-block-start:1px dotted}
+code{display:inline-block;inline-size:min(70%, 20ch);font:inherit}
+i{float:inline-end;font:inherit}
+</style>
+<link rel="stylesheet" href="/visibility/test.css">
+<style>
+li:nth-child(5) i {
+	visibility: hidden;
+}
+li:nth-child(6) i {
+	display: none;
+}
+</style>
+</head>
+<body>
+<ol>
+<li>
+<i>* 💬</i>
+</li>
+<li>
+<code>[hidden]</code>
+<i hidden>* 💬</i>
+</li>
+<li>
+<code>[style]</code>
+<code>visibility: hidden;</code>
+<i style="visibility:hidden">* 💬</i>
+</li>
+<li>
+<code>[style]</code>
+<code>display: none;</code>
+<i style="display:none">* 💬</i>
+</li>
+<li>
+<code>style</code>
+<code>visibility: hidden;</code>
+<i>* 💬</i>
+</li>
+<li>
+<code>style</code>
+<code>display: none;</code>
+<i>* 💬</i>
+</li>
+<li>
+<code>link[rel=&quot;stylesheet&quot;]</code>
+<code>visibility: hidden;</code>
+<i>* 💬</i>
+</li>
+<li>
+<code>link[rel=&quot;stylesheet&quot;]</code>
+<code>display: none;</code>
+<i>* 💬</i>
+</li>
+</ol>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "cssence.netlify.app",
+  "homepage": "https://cssence.netlify.app/",
+  "version": "0.1.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cssence/cssence.netlify.app.git"
+  },
+  "scripts": {
+    "start:dev": "http-server -c-1 -p 8088 ./public",
+    "start": "http-server -p 8088 ./public"
+  }
+}

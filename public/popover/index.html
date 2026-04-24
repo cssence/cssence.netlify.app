@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Popover — @CSSence test pages</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<style>
+form,dialog:open,[popover]:popover-open{display:grid;gap:.5rem;justify-items:end}
+form{justify-items:start}
+input[type="button"],button{font:inherit}
+dl{font-size:smaller}
+dt+dd{margin-block-start:-1lh}
+</style>
+</head>
+<body>
+
+<form>
+<button type="button" popovertarget="popover" popovertargetaction="toggle">Toggle the popover [p]</button>
+<button type="button" commandfor="popover" command="toggle-popover">Toggle the popover [i]</button>
+<button type="button" commandfor="dialog" command="show-modal">Show modal dialog [i]</button>
+<input type="button" commandfor="dialog" command="show-modal" value="Show modal dialog [i] (1)">
+<button type="reset" commandfor="dialog" command="show-modal">Show modal dialog [i] (2)</button>
+<dl>
+<dt>[p]</dt>
+<dd>Popover API</dd></dt>
+<dt>[i]</dt>
+<dd>Invoker Commands API</dd></dt>
+<dt>(1)</dt>
+<dd>on input[type=button]: Should not work</dd>
+<dt>(2)</dt>
+<dd>on button[type=reset]: Should not work when inside a form</dd>
+</dl>
+</form>
+
+<div id="popover" popover>
+<button commandfor="popover" command="hide-popover">Dismiss [i]</button>
+<button popovertarget="popover" popovertargetaction="hide">Dismiss [p]</button>
+<p>Popover content</p>
+</div>
+
+<dialog id="dialog">
+<button commandfor="dialog" command="close">Close</button>
+<p>Dialog Content</p>
+</dialog>
+
+<!--
+<button commandfor="details" command="show">Show details [i]</button>
+<button commandfor="details" command="show-details">Show details [i]</button>
+<button commandfor="details" command="toggle">Show details [i]</button>
+<button commandfor="details" command="toggle-details">Show details [i]</button>
+
+<details id="details">
+<summary>Show Details</summary>
+<button commandfor="details" command="close">Close</button>
+<p>Details content</p>
+</details>
+-->
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Download — @CSSence test pages</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark light">
+</head>
+<body>
+<form>
+<textarea name="input" rows="6">Sample text
+</textarea>
+<a download="Untitled.md">Download</a>
+</form>
+<script type="module">
+const input = document.querySelector('textarea[name="input"]');
+const updateHref = () => {
+    let url = null;
+    const blob = new Blob([input.value], { type: 'text/plain;charset=utf-8' });
+    if (url) URL.revokeObjectURL(url);
+    url = URL.createObjectURL(blob);
+    document.querySelector('a[download]').setAttribute('href', url);
+};
+input.addEventListener('blur', updateHref, false);
+updateHref();
+</script>
+</body>
+</html>
